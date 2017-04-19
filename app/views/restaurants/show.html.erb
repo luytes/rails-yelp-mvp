@@ -1,0 +1,38 @@
+<div class="container-index text-center">
+  <h1>Your selected Restaurant</h1>
+  <h2><%= @restaurant.name %></h2>
+
+  <p>
+  <strong>Adress:</strong>
+  <%= @restaurant.address %>
+  </p>
+
+  <p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+  </p>
+
+  <p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+  </p>
+
+  <ul>
+    <% @restaurant.reviews.each do |rev| %>
+    <li>
+      <%= rev.content %>
+      <br>
+      <%= rev.rating %>
+    </li>
+    <% end %>
+  </ul>
+
+<%= render template: 'reviews/_form.html.erb' %>
+<!-- what is this??? why is there a render template, where does it come from? -->
+
+  <%= link_to "Back", restaurants_path %>
+  <%= link_to "Edit", edit_restaurant_path %>
+  <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
+  <!-- cause its a dynamic path we need that @restaurant -->
+
+</div>

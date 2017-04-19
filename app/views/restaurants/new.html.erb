@@ -1,0 +1,18 @@
+<!-- <div class="text-center">
+  <form action="/restaurants" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <h3>Add a name</h3>
+    <label for="name">Name: </label>
+    <input type="text" name="restaurant[name]" id="name">
+
+    <h3>Add an address</h3>
+    <label for="address">Address: </label>
+    <input type="text" name="restaurant[address]" id="address">
+
+    <input type="submit">
+  </form>
+  <%= link_to "Back", restaurants_path %>
+</div>
+ -->
+ <%= render 'form' %>

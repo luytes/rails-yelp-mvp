@@ -1,4 +1,4 @@
-<div class="container-index text-center">
+<div class="container text-center">
   <h1>Your selected Restaurant</h1>
   <h2><%= @restaurant.name %></h2>
 
@@ -17,15 +17,13 @@
   <%= @restaurant.category %>
   </p>
 
-  <ul>
+  <div class="reviews">
+    <h3>Reviews: </h3>
     <% @restaurant.reviews.each do |rev| %>
-    <li>
-      <%= rev.content %>
-      <br>
-      <%= rev.rating %>
-    </li>
+    <p>"<%= rev.content %>"</p>
+    <p>Rated: <%= rev.rating %>/5</p>
     <% end %>
-  </ul>
+  </div>
 
 <%= render template: 'reviews/_form.html.erb' %>
 <!-- what is this??? why is there a render template, where does it come from? -->
